@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Estilos_Paginas/estilosPaginaCandeeiro.css">
+        <link rel="icon" type="image/x-icon" href="assets/La-redoute-brand-logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/1c5681658c.js" crossorigin="anonymous"></script>
+        <title>Abajur de teto</title>
+    </head>
+    <body>
+
+        <header class="navbar">
+            <div class="navbar-main">
+                <div class="logo">
+                    <a href="MainPage.html"><img src="assets/La-redoute-brand-logo.png" alt="LaRedoute logo"></a>
+                </div>
+                <div class="menuBotaoNavBar" style="display: none;">
+                    <button id="BotaoMenuNav"> <i class="fa-solid fa-bars"></i> Menu</button>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder=" Digite o produto que quer procurar">
+                </div>
+                <div class="icons">
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+            <div class="navbar-bottom" id="navbarbottom">
+                <button id="BotaoMenu"> <i class="fa-solid fa-bars"></i> Menu</button>
+                <button id="BotaoBlackWeeks">Black Weeks</button>
+                <button id="BotaoTopVendas">Top Vendas</button>
+                <button id="BotaoInspiracoesNatal">Inspirações Natal</button>
+            </div>
+        </header>
+
+        <div class="sidebar" id="mySideBar">
+            <button class="closebtn" id="closebtn">&times;</button>
+            <h3>Neste momento</h3>
+            <button class="btnBlackFriday">Black Friday</button>
+            <div class="InspiraçãoNatal">
+             <button class="btnNatal">Inspirações Natal<i class='fas fa-angle-right'></i></button>   
+            </div>
+            <h3>Categorias de casa</h3>
+            <div class="listaCategorias">
+                <a href="PaginaProdutos.html"><img src="assets/CandeeiroMenu.png" alt="Candeeiro">Iluminação<i class='fas fa-angle-right'></i></a> 
+                <button><img src="assets/AlmofadasMenu.png" alt="Almofadas">Têxtil-lar<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/SofáMenu.png" alt="Sofá">Sofás, Cadeirões<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/MesaMenu.png" alt="Mesa">Mesas, Cadeiras<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/camaMenu.png" alt="Cama">Camas<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/MobiliárioMenu.png" alt="Mobilia">Mobiliário<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/TapeteMenu.png" alt="Tapete">Tapetes,passadeiras<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/DecoraçãoMenu.png" alt="Vaso">Decoração<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/JardimMenu.png" alt="Cadeira">Jardim, varandas<i class='fas fa-angle-right'></i></button>
+                <button><img src="assets/EletrodomesticosMenu.png" alt="Máquina">Eletrodomésticos<i class='fas fa-angle-right'></i></button>
+            </div> 
+            <button class="outlet"><img src="assets/OutletMenu.png" alt="">Outlet <i class='fas fa-angle-right' style="position: absolute;right:40px;"></i></button>
+        </div>
+
+        <main>
+            <div class="visao-geral">
+                <div class="canvas-e-botao">
+                    <canvas class="produto-imagem" id="candeeiro-ThreeJS">
+                        <!--Container onde irá ser mostrado o candeeiro usando ThreeJs-->
+                    </canvas>
+                    <button class="botao-animacoes" id="botao-animacoes"><img src="assets/botao_animacoes.png" alt=""></button>
+                </div>
+                <div class="produto-detalhes">
+                    <h5><span style="color: rgb(93, 90, 90);">La Redoute</span> / Iluminação</h5>
+                    <h1>Candeeiro de teto em verga,Ø60cm, Jutlo</h1>
+                    <a href="#detalhes-adicionais" class="descricao">Ver Descrição</a>
+                    <div class="dropdown">
+                        <button onclick="AbrirOpcoes()">Texturas do Abajur <span><i class="fa-solid fa-down-long"></i></span></button>
+                        <div class="dropdown-opcoes" id="dropdown-opcoes">
+                            <div class="opcao" id="couro_verde">
+                                <img src="Modelo_3D/Texturas_Abajur/couro_verde.png" alt="Couro Verde" >
+                                <span>Couro Verde</span>
+                            </div>
+                            <div class="opcao" id="xadrez_azul">
+                                <img src="Modelo_3D/Texturas_Abajur/xadrez.png" alt="Xadrez_azul">
+                                <span>Xadrez Azul</span>
+                            </div>
+                            <div class="opcao" id="tijolo_colorido">
+                                <img src="Modelo_3D/Texturas_Abajur/tijolo.jpg" alt="Tijolo_Colorido">
+                                <span>Atijolado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acoes">
+                        <button class="adicionar-carrinho">Juntar ao carrinho</button>
+                        <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="posicoes-candeeiro">
+                        <img src="Modelo_3D/Posicoes_Candeeiro/posicao_1.png" alt="Posicao 1" id="posicao1">
+                        <img src="Modelo_3D/Posicoes_Candeeiro/posicao_2.png" alt="Posicao 2" id="posicao2">
+                        <img src="Modelo_3D/Posicoes_Candeeiro/posicao_3.png" alt="Posicao 3" id="posicao3">
+                    </div>
+                    <div class="disponibilidade">
+                        <p><i class="fa-regular fa-clock"></i> Disponivel para envio até 9 dias úteis</p>
+                    </div>
+                    <div class="grupo-botoes">
+                        <button>30 DIAS PARA TROCAR OU DEVOLVER</button>         
+                        <button>ENVIO GRÁTIS</button>
+                        <button>DEVOLUÇÃO GRÁTIS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="detalhes-adicionais" id="detalhes-adicionais">
+                <h2>Descrição do artigo</h2>
+                <h3>Candeeiro de teto em verga,Ø60cm, Jutlo</h3>
+                <p>Ref: <strong>2429964 / GK1065</strong></p>
+                <p>Estilo étnico e fabrico artesanal: o candeeiro em verga Jutlo cria um ambiente acolhedor. O acabamento ajurado
+                difunde uma luz suave.</p>
+                <h4>Descrição</h4>
+                <ul>
+                    <li>Em verga com barra ajurada</li>
+                    <li>Estrutura em ferro revestida por uma tinta epóxi</li>
+                    <li>Suporte para casquilho E27</li>
+                    <li>Este artigo é vendido sem eletrificação, cabo elétrico Baulind à venda no site</li>
+                </ul>
+                <h4>Qualidade</h4>
+                <ul>
+                    <li>Fabrico artesanal</li>
+                </ul>
+                <h4>Dimensões</h4>
+                <ul>
+                    <li>Diametro: 60 cm</li>
+                    <li>Altura: 15 cm</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-item">
+                    <i class="fa-solid fa-truck"></i>
+                  
+                    <p>Envio Grátis</p>
+                </div>
+                <div class="footer-item">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>Trocas e Devoluções</p>
+                </div>
+                <div class="footer-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Pagamento Seguro</p>
+                </div>
+                <div class="footer-item">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>Apoio ao cliente</p>
+                </div>
+
+            </div>
+            <div class="footer-meio">
+                <div>
+                    <h4>LA REDOUTE</h4>
+                    <ul>
+                        <li><a href="">Quem somos</a></li>
+                        <li><a href="">Contactos</a></li>
+                        <li><a href="">Sustentabilidade e <br>responsabilidade social</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>SERVIÇOS</h4>
+                    <ul>
+                        <li><a href="">Ajuda</a></li>
+                        <li><a href="">Trocas & Devoluções</a></li>
+                        <li><a href="">Remover inscrição de Newsletter</a></li>
+                        <li><a href="">Recolha e montagem</a></li>
+                        <li><a href="">Todos os serviços</a></li>
+
+                    </ul>
+                </div><div>
+                    <h4>MARCAS EXCLUSIVAS</h4>
+                    <ul>
+                        <li><a href="">La Redoute Collections</a></li>
+                        <li><a href="">La Redoute Intérieurs</a></li>
+                        <li><a href="">AM.PM</a></li>
+                    </ul>
+                </div><div>
+                    <h4>UNIVERSO LA REDOUTE</h4>
+                    <ul>
+                        <li><a href="">Inspiração</a></li>
+                        <li><a href="">Vídeos</a></li>
+                        <li><a href="">Profissionais</a></li>
+                        <li><a href="">App La Redoute</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+           <hr> 
+            <div class="footer-bottom">
+                <div class="footer-bottom-secção">
+                    <div class="metodos-pagamento">
+                        <p>Métodos de Pagamento</p>
+                        <div class="iconsPagamento">
+                            <img src="assets/Apple-pay.jpg" alt="Apple pay"  >
+                            <img src="assets/Google-pay.jpg" alt="Google pay">
+                            <img src="assets/Klarna.jpg" alt="Klarna">
+                            <img src="assets/MasterCard.jpg" alt="MasterCard">
+                            <img src="assets/MB-WAY.jpg" alt="MB-WAY">
+                            <img src="assets/Multibanco.jpg" alt="Multibanco">
+                            <img src="assets/PAYPAL.jpg" alt="Multibanco">
+                            <img src="assets/VISA.jpg" alt="Multibanco">
+                        </div>                       
+                    </div>
+                    <div class="Redes-Sociais">
+                        <p>Sempre Juntos</p>
+                        <div class="iconsRedesSociais">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <br>
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </div>        
+                    </div>
+                    <div class="app-download">
+                        <p>APP La Redoute</p>
+                        <img src="assets/google-play.jpg" alt="google-play" style="width: 50%;border-radius: 6px;">
+                        <img src="assets/app-store.jpg" alt="app-store" style="width: 50%;border-radius: 6px;">
+                    </div>
+                    <div class="Distinções">
+                        <p>Distinções</p>                 
+                        <img src="assets/distincao2.jpg" alt="distinção1" >
+                        <img src="assets/distincao3.jpg" alt="distinção2">
+                        <img src="assets/distincao1.jpg" alt="distinção3">
+                    </div>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Condições gerais de venda</a>
+                    <a href="#">*Condições das ofertas em vigor</a>
+                    <a href="#">Politica de privacidade e cookies</a>
+                    <a href="#">Livro de Reclamções eletrónico</a>
+                    <a href="#">Recrutamento La Redoute</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="ficheirosJSdaMain/AbrirSideBar.js"></script>
+        <script>
+            function AbrirOpcoes(){
+                const dropdown = document.getElementById('dropdown-opcoes');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+
+        <script type="importmap">
+            {
+            "imports": {
+                "three": "/node_modules/three/build/three.module.js",
+                "three/addons/": "/node_modules/three/examples/jsm/"
+            }
+            }
+        </script>
+        <script type="module" defer src="main.js"></script>
+
+        
+    </body>
+</html>

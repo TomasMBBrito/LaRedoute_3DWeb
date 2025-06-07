@@ -1,0 +1,1062 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Mantém proporção */
+}
+
+.marquee{
+    width: 100%;
+    background-color: rgb(4, 4, 65);
+    color: white;
+    overflow: hidden;
+    top:0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.animate-text{
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.animate-text span{
+    font-size: 20px;
+    color:white;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 46px;
+    display: none;
+}
+
+.animate-text span.text-in{
+	display: block;
+	animation: textIn 1s ease;
+}
+.animate-text span.text-out{
+	animation: textOut 1s ease;
+}
+@keyframes textIn{
+	0%{
+        opacity: 0;
+		transform: translateY(100%);
+	}
+	100%{
+        opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes textOut{
+	0%{
+        opacity: 1;
+		transform: translateY(0%);
+	}
+	100%{
+        opacity: 0;
+		transform: translateY(-100%);
+
+	}
+}
+
+.navbar{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index:998;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    transition: height 0.3s ease,padding 0.3s ease;;
+    height: auto;
+}
+
+.navbar.encolhida{
+    top:0;
+    height: 130px;
+}
+
+.navbar-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+}
+
+.logo img{
+    height: 100px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width:60%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: width 0.3s ease;
+}
+
+.search i{
+    color: rgb(255, 0, 102);
+    font-size: 20px;
+}
+
+.search input{
+    border: none;
+    background: none;
+    flex: 1;
+    font-size: 14px;
+    color: #777;
+    outline: none; 
+}
+
+.search input:focus{
+    margin-left: 10px;
+}
+
+
+
+.icons a,.icons i{
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-bottom{
+    display: flex;
+    padding: 10px 20px;
+    gap: 50px;
+    margin-top: -1%;
+    margin-left: 19%;
+    margin-bottom: 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: gap 0.3s ease,margin-left 0.3s ease ,visibility 0.3s ease;
+}
+
+
+.navbar-bottom.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+.navbar-bottom button{
+    background: #eeeeee;
+    color: #0a0a23;
+    border: none;
+    padding: 5px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-bottom button:hover{
+    background-color: lightgrey  ;
+    
+}
+
+#BotaoMenu{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+
+}
+
+#BotaoMenuNav{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+
+}
+
+#BotaoMenu:hover{
+    background-color: rgb(255, 0, 102);
+}
+
+#BotaoMenuNav:hover{
+    background-color: rgb(255, 0, 102);
+}
+
+
+.sidebar{
+    width: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.sidebar .closebtn{
+    font-size: 36px;
+    position: absolute;
+    top: 0;
+    margin-top: 25px;
+    right: 25px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.sidebar h3{
+    margin-top:25px ;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.sidebar .btnBlackFriday{
+    background-color: black;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.sidebar .btnBlackFriday:hover{
+    background-color: rgb(94, 88, 88);
+}
+
+.InspiraçãoNatal{
+    position: relative;
+}
+.InspiraçãoNatal .btnNatal{
+    background-color: #ffe8eb;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.InspiraçãoNatal .btnNatal:hover{
+    background-color: #e7b7be;
+
+}
+
+.InspiraçãoNatal .btnNatal i{
+    position: absolute;
+    right: 40px;
+}
+.sidebar .listaCategorias a{
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    width: 90%;
+    text-align: left;
+    padding: 13px;
+    margin: 7px 0;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: 0;
+    border: none;
+    color: black;
+}
+
+.sidebar .listaCategorias a img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.sidebar .listaCategorias a i{
+    right: 40px;
+    position: absolute;
+}
+
+.sidebar .listaCategorias a:hover{
+    background: #b6b3b3;
+}
+
+.sidebar .listaCategorias button{
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    width: 90%;
+    text-align: left;
+    padding: 13px;
+    margin: 7px 0;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: 0;
+    border: none;
+}
+
+.sidebar .listaCategorias button img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.sidebar .listaCategorias button i{
+    right: 40px;
+    position: absolute;
+}
+
+.sidebar .listaCategorias button:hover{
+    background: #b6b3b3;
+}
+
+.sidebar .outlet{
+    display: flex;
+    align-items: center;
+    background-color: darkgray;
+    width: 90%;
+    text-align: left;
+    padding: 13px;
+    margin: 7px 0;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    outline: 0;
+    border: none;
+}
+
+.sidebar .outlet img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.sidebar .outlet:hover{
+    background-color: rgb(128, 123, 123);
+}
+
+
+
+.container{
+    position: relative;
+    margin-top: 185px;
+}
+
+.background{
+    width: 100%;
+}
+
+.container .discount-button{
+    position:absolute;
+    top: 30px;
+    left: 43%;
+    color:plum;
+    background-color: #0a0a23;
+    border: none;
+    padding: 10px 50px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.discount-text{
+    position: absolute;
+    top:50%;
+    left: 20px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.discount-text h1{
+    font-size: 100px;
+}
+
+.discount-text h2{
+    font-size: 50px;
+}
+
+.discount-text h2 strong{
+    font-size: 60px;
+}
+
+.discount-text h4{
+    color: plum;
+    font-size:40px ;
+    
+}
+
+.discount-text button{
+    position:absolute;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+.discount-text button:hover{
+    background-color: rgb(49, 45, 45);
+    
+}
+
+.discount-text p{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.TextoInspiraNatal{
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 30px;
+    padding-bottom: 40px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.col-3{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+
+.col-3 img{
+    width: 100%;
+}
+
+.col-3 button{
+    background: #eeeeee;
+    color: #0a0a23;
+    border: none;
+    outline: 0;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.col-3 button:hover{
+    background:lightgray ;
+}
+
+.col-3 p{
+    color: red;
+    font-size: 20px;
+}
+
+.precoComDesconto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.precoComDesconto span{
+    color: rgb(66, 63, 63);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.cartaz{
+    position: relative;
+    display: inline-block;
+}
+
+.AnuncioBlackWeek{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    color: plum; 
+}
+
+.InspiraNatal {
+    position: absolute;
+    left: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.imagensNatal{
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    
+    -ms-flex-wrap: wrap;
+}
+
+.imagens{
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 50%;
+    position: relative;
+}
+
+.imagens img{
+    vertical-align: middle;
+    width: 100%;
+}
+
+.imagemBotao{
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+}
+
+.imagemBotao img{
+    width: 100%;
+    display: block;
+}
+
+.imagemBotao .botaoNatal{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    transform: translate(-50%);
+    background-color: black;
+    color:#fff ;
+    border: none;
+    outline: none;
+    padding: 10px 70px;
+    font-size:16px ;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.imagemBotao .botaoNatal:hover{
+    background-color: rgb(72, 66, 66);
+}
+
+.newsletter{
+    padding: 30px 20px;
+    background-color:#ffe6f2;
+    margin-top:100px ;
+    text-align: center;
+}
+
+.newsletter-container h2{ 
+    flex: 0.5;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+
+.newsletter-container{
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-group label{
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-group input{
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+
+.form-group button{
+    background-color: black;
+    color:white;
+    padding: 14px;
+    border: none;
+    border-radius: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.form-group button:hover{
+    background-color: rgb(72, 66, 66);
+}
+
+footer{
+    position: relative;
+    padding: 200px 20px;
+    background-color: #00565F;
+    width: 100%;
+}
+
+.footer-top{
+    display: flex;
+    justify-content: space-around; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00454C;
+    padding: 60px ;
+}
+
+.footer-item p{
+    font-size: 20px;
+    font-weight:bold ;
+    color: #fff;
+    margin: 0;
+   
+}
+
+.footer-item i{
+    font-size: 40px;
+    color: #fff;
+    
+}
+
+.footer-item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+}
+
+.footer-meio{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.footer-meio h4{
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-meio ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-meio ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.footer-meio ul li a:hover{
+    text-decoration: underline;
+}
+
+.footer-bottom{
+    color: #fff;
+   margin-bottom: -40px;
+}
+
+.footer-bottom-secção{
+    display: flex;
+    justify-content: space-evenly;  
+    align-items: flex-start; 
+    margin-bottom:20px;
+    margin-top: 30px;
+}
+
+.footer-bottom-secção div{
+    text-align: center;
+    margin: 10px;
+}
+
+.footer-bottom-secção p{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.iconsPagamento{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 imagens por linha */
+    gap: 10px; /* Espaçamento entre as imagens */
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.iconsPagamento img{
+    border-radius: 6px;
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.iconsPagamento img:hover{
+    transform: scale(1.2);
+}
+
+
+.Distinções img{
+    width: 40px; 
+    margin: 5px;
+    cursor: pointer;
+}
+
+.footer-bottom-links{
+    justify-content: space-between;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+}
+
+
+.footer-bottom-links a{
+    color: #fff;
+    font-size: 12px;
+    margin: 0 10px;
+    transition: font-weight 0.3s ease;
+}
+
+.footer-bottom-links a:hover{
+    font-weight: bold;
+}
+
+.iconsRedesSociais{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.iconsRedesSociais i{
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.iconsRedesSociais i:hover{
+    transform: scale(1.2);
+    color: palevioletred; 
+}
+
+.Redes-Sociais{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.app-download img{
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .TextoInspiraNatal {
+        font-size: 40px;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-main {
+        gap: 10px;
+    }
+
+    .icons{
+        display: flex;
+    }
+
+    .logo img {
+        height: 90px;
+    }
+
+    .search {
+        margin-left: 20px;
+        width: 50%;
+    }
+
+    .navbar-bottom {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-bottom button {
+        padding: 5px 10px;
+    }
+
+    #BotaoMenuNav{
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        display: none;
+        transition: background-color 0.3s ease;
+    
+    }
+    
+    
+    #BotaoMenuNav:hover{
+        background-color: rgb(255, 0, 102);
+    }
+
+    .container {
+        margin-top: 130px;
+    }
+
+    .discount-text h1{
+        font-size: 40px;
+    }
+
+    .discount-text h2{
+        font-size: 20px;
+    }
+
+    .discount-text h2 strong{
+        font-size: 30px;
+    }
+
+    .discount-text button{
+        top:95%;
+        left: 10px; 
+    }
+
+    .small-container h3{
+        font-size: 15px;
+    }
+
+    .col-3 .precoComDesconto{
+        color: green;
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 50px;
+        padding: 50px;
+    }
+
+    .footer-top .footer-item p {
+        font-size: 20px;
+    }
+
+    .footer-top .footer-item i {
+        font-size: 20px;
+    }
+
+    .footer-meio {
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+
+    .TextoInspiraNatal {
+        font-size: 40px;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-main {
+        gap: 10px;
+    }
+
+    .icons{
+        display: flex;
+    }
+
+    .logo img {
+        height: 90px;
+    }
+
+    .search {
+        margin-left: 20px;
+        width: 50%;
+    }
+
+    .navbar-bottom {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-bottom button {
+        padding: 5px 10px;
+    }
+
+    #BotaoMenuNav{
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        display: none;
+        transition: background-color 0.3s ease;
+    
+    }
+    
+    
+    #BotaoMenuNav:hover{
+        background-color: rgb(255, 0, 102);
+    }
+
+    .container {
+        margin-top: 130px;
+    }
+
+    .discount-text h1{
+        font-size: 40px;
+    }
+
+    .discount-text h2{
+        font-size: 20px;
+    }
+
+    .discount-text h2 strong{
+        font-size: 30px;
+    }
+
+    .discount-text button{
+        top:95%;
+        left: 10px; 
+    }
+
+    .small-container h3{
+        font-size: 17px;
+    }
+
+    .col-3 .precoComDesconto{
+        color: green;
+    }
+
+    .footer-top {
+        align-items: center;
+        gap: 50px;
+        padding: 50px;
+    }
+
+    .footer-top .footer-item p {
+        font-size: 20px;
+    }
+
+    .footer-top .footer-item i {
+        font-size: 20px;
+    }
+
+    .footer-meio {
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+
+
+
+
+
+
